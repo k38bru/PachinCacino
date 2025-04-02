@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/gameplay/meta.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( -98, 0, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["meta"]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 17.96, 1 )
+shape = SubResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+rotation = -1.5708
+emitting = false
+one_shot = true
+process_material = SubResource( 2 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+position = Vector2( 158, 0 )
+rotation = -1.5708
+emitting = false
+one_shot = true
+process_material = SubResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( -157, 0 )
+rotation = -1.5708
+emitting = false
+one_shot = true
+process_material = SubResource( 2 )
