@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/ui/fondo pachinco.jpg" type="Texture" id=4]
 [ext_resource path="res://scenes/objects/meta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui/Textura mesa cacino.jpg" type="Texture" id=6]
-[ext_resource path="res://assets/ui/button_rectangle_depth_border_green.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/button_rectangle_depth_border_red.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/button_rectangle_depth_border_grey.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/button_rectangle_depth_border.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/Super Peace.ttf" type="DynamicFontData" id=10]
@@ -89,6 +89,8 @@ current = true
 [node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 616, 610 )
 scale = Vector2( 2.16, 1 )
+z_index = 2
 
 [node name="Bola" parent="." instance=ExtResource( 1 )]
 position = Vector2( 634, 194 )
+z_index = 1

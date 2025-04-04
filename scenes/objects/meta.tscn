@@ -1,15 +1,34 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/gameplay/meta.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00877193, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.45614, 0.45614, 0.45614, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
 [sub_resource type="ParticlesMaterial" id=2]
 flag_disable_z = true
 gravity = Vector3( -98, 0, 0 )
 initial_velocity = 100.0
+angular_velocity = 211.2
+angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+scale = 15.0
+scale_random = 1.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["meta"]]
 script = ExtResource( 1 )
@@ -19,12 +38,14 @@ scale = Vector2( 17.96, 1 )
 shape = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 0.00784314, 1, 0, 1 )
 rotation = -1.5708
 emitting = false
 one_shot = true
 process_material = SubResource( 2 )
 
 [node name="Particles2D3" type="Particles2D" parent="."]
+modulate = Color( 0.00784314, 1, 0, 1 )
 position = Vector2( 158, 0 )
 rotation = -1.5708
 emitting = false
@@ -32,6 +53,7 @@ one_shot = true
 process_material = SubResource( 2 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
+modulate = Color( 0.00784314, 1, 0, 1 )
 position = Vector2( -157, 0 )
 rotation = -1.5708
 emitting = false
